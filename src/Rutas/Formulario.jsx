@@ -23,9 +23,10 @@ function App() {
   };
 
   const agregarDetalle = () => {
-    const detalleActual = { articulo, cantidad, observaciones };
+    const detalleActual = { solicitante, articulo, cantidad, observaciones };
     setListaDetalle([...listaDetalle, detalleActual]);
     // Limpiar campos de entrada después de agregar el detalle
+    setSolicitante('');
     setArticulo('');
     setCantidad('');
     setObservaciones('');
@@ -44,6 +45,7 @@ function App() {
   const mostrarDetalles = () => {
     return listaDetalle.map((detalle, index) => (
       <div key={index}>
+        
         <input
           type="text"
           value={detalle.articulo}
